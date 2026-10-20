@@ -158,7 +158,9 @@ Keluaran program dibagi menjadi enam bagian.
 Tangkapan layar diambil langsung dari VS Code dan PowerShell saat program
 dijalankan. Semua berkas disimpan di folder `docs/` dan diberi nomor sesuai
 urutan pembahasan, sehingga Gambar 1 selalu `docs/01-index-1.png` dan seterusnya.
-Klik salah satu gambar untuk membuka ukuran penuhnya.
+Gambar di dalam tabel sengaja diperkecil agar tetap rapi, sedangkan berkas asli
+berukuran penuh tersimpan di folder tersebut dengan nama seperti yang tertulis
+di bawah setiap gambar.
 
 **Tabel 3. Tangkapan layar source code**
 
