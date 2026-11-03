@@ -1,0 +1,368 @@
+/* Gaya tampilan Perpustakaan Kampus untuk praktikum PBO Pertemuan 7 */
+
+:root {
+    --latar: #f4f6fb;
+    --permukaan: #ffffff;
+    --garis: #dde3ee;
+    --teks: #1b2437;
+    --teks-lemah: #5b6781;
+    --aksen: #2b4c8c;
+    --aksen-lembut: #e8eefb;
+    --hijau: #1c6b4a;
+    --hijau-lembut: #e4f4ec;
+    --merah: #9a2c2c;
+    --merah-lembut: #fbe9e9;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--latar);
+    color: var(--teks);
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+a {
+    color: var(--aksen);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Kepala halaman */
+
+.topbar {
+    background: var(--permukaan);
+    border-bottom: 1px solid var(--garis);
+}
+
+.topbar-dalam {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.merek {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: var(--teks);
+}
+
+.merek:hover {
+    text-decoration: none;
+}
+
+.merek-tanda {
+    background: var(--aksen);
+    color: #ffffff;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    padding: 5px 9px;
+    border-radius: 5px;
+}
+
+.navigasi {
+    display: flex;
+    gap: 6px;
+}
+
+.navigasi a {
+    padding: 7px 14px;
+    border-radius: 6px;
+    color: var(--teks-lemah);
+    font-weight: 500;
+}
+
+.navigasi a:hover {
+    background: var(--aksen-lembut);
+    color: var(--aksen);
+    text-decoration: none;
+}
+
+.navigasi a.aktif {
+    background: var(--aksen-lembut);
+    color: var(--aksen);
+}
+
+/* Isi */
+
+.wadah {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 32px 24px 48px;
+}
+
+.label-atas {
+    margin: 0 0 6px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--aksen);
+}
+
+h1 {
+    margin: 0 0 8px;
+    font-size: 27px;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+}
+
+h2 {
+    margin: 28px 0 12px;
+    font-size: 17px;
+}
+
+.keterangan {
+    margin: 0;
+    color: var(--teks-lemah);
+    max-width: 62ch;
+}
+
+.kepala-halaman {
+    margin-bottom: 20px;
+}
+
+/* Kartu ringkasan */
+
+.kartu-ringkas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.kartu {
+    background: var(--permukaan);
+    border: 1px solid var(--garis);
+    border-radius: 10px;
+    padding: 16px 18px;
+}
+
+.kartu-label {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--teks-lemah);
+    margin-bottom: 4px;
+}
+
+.kartu-nilai {
+    display: block;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+/* Tabel */
+
+.panel {
+    background: var(--permukaan);
+    border: 1px solid var(--garis);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.tabel {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabel thead th {
+    background: #f8fafd;
+    border-bottom: 1px solid var(--garis);
+    padding: 11px 18px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--teks-lemah);
+}
+
+.tabel tbody td {
+    border-bottom: 1px solid var(--garis);
+    padding: 11px 18px;
+    vertical-align: middle;
+}
+
+.tabel tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.tabel tbody tr:hover {
+    background: #fafbfe;
+}
+
+.kanan {
+    text-align: right;
+}
+
+.judul-buku {
+    display: block;
+    font-weight: 600;
+}
+
+.meta {
+    display: block;
+    font-size: 13px;
+    color: var(--teks-lemah);
+}
+
+.chip {
+    display: inline-block;
+    background: var(--aksen-lembut);
+    color: var(--aksen);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+.chip-hijau {
+    background: var(--hijau-lembut);
+    color: var(--hijau);
+}
+
+.chip-merah {
+    background: var(--merah-lembut);
+    color: var(--merah);
+}
+
+/* Halaman detail */
+
+.remah {
+    font-size: 13px;
+    color: var(--teks-lemah);
+    margin: 0 0 18px;
+}
+
+.isi-detail {
+    background: var(--permukaan);
+    border: 1px solid var(--garis);
+    border-radius: 10px;
+    padding: 28px 30px 30px;
+}
+
+.rincian {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 10px 18px;
+    margin: 24px 0;
+    padding-top: 20px;
+    border-top: 1px solid var(--garis);
+    font-size: 14px;
+}
+
+.rincian dt {
+    color: var(--teks-lemah);
+}
+
+.rincian dd {
+    margin: 0;
+    font-weight: 500;
+}
+
+.status {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 6px;
+    margin-bottom: 22px;
+}
+
+.status-tersedia {
+    background: var(--hijau-lembut);
+    color: var(--hijau);
+}
+
+.status-habis {
+    background: var(--merah-lembut);
+    color: var(--merah);
+}
+
+.tombol {
+    display: inline-block;
+    background: var(--aksen);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 9px 18px;
+    border-radius: 6px;
+}
+
+.tombol:hover {
+    background: #223d72;
+    text-decoration: none;
+}
+
+.tombol-ringan {
+    background: transparent;
+    color: var(--aksen);
+    border: 1px solid var(--garis);
+}
+
+.tombol-ringan:hover {
+    background: var(--aksen-lembut);
+}
+
+/* Daftar pinjaman */
+
+.daftar-pinjaman {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.daftar-pinjaman li {
+    border-bottom: 1px solid var(--garis);
+    padding: 11px 0;
+    font-size: 14px;
+}
+
+.daftar-pinjaman li:last-child {
+    border-bottom: none;
+}
+
+.daftar-pinjaman .tanggal {
+    float: right;
+    color: var(--teks-lemah);
+    font-size: 13px;
+}
+
+/* Keadaan kosong */
+
+.kosong {
+    background: var(--permukaan);
+    border: 1px dashed var(--garis);
+    border-radius: 10px;
+    padding: 28px;
+    text-align: center;
+    color: var(--teks-lemah);
+}
+
+/* Kaki */
+
+.kaki {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px 36px;
+    font-size: 12px;
+    color: var(--teks-lemah);
+}
