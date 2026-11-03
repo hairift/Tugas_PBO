@@ -65,55 +65,57 @@ routes/web.php
 
 ## Praktikum: halaman buku
 
-### Halaman daftar buku
+### Sebelum dimodifikasi
 
-![Halaman daftar buku](docs/01-halaman-buku.png)
+![Halaman /buku sebelum dimodifikasi](docs/01-buku-sebelum.png)
 
-Delapan judul buku ditampilkan dengan `@foreach`, sedangkan tiga kartu ringkasan
-di atasnya dihitung di `BukuController@index`.
+![Halaman /buku/1 sebelum dimodifikasi](docs/03-buku-detail-sebelum.png)
 
-### Halaman detail buku
+Bentuk awal mengikuti contoh pada modul: daftar judul sederhana dan halaman
+detail yang hanya menulis id buku.
 
-![Halaman detail buku](docs/02-detail-buku.png)
+### Sesudah dimodifikasi
 
-Nilai `{id}` pada URL diterima method `show()`. Bila id tidak ada, `abort_if`
-menghentikan permintaan dengan halaman 404.
+![Halaman /buku sesudah dimodifikasi](docs/02-halaman-buku.png)
+
+![Halaman /buku/1 sesudah dimodifikasi](docs/04-detail-buku.png)
+
+Halaman daftar diberi kartu ringkasan, kolom kategori, dan tautan menuju
+detail. Halaman detail menampilkan seluruh data buku beserta keterangan
+ketersediaan yang ditentukan `@if`.
 
 ### Pemeriksaan route dengan Artisan
 
-![Keluaran route:list](docs/03-route-list.png)
-
-`php artisan route:list --path=buku` memastikan kedua route praktikum terbaca
-Laravel, lalu `--except-vendor` menampilkan seluruh route aplikasi.
+![Keluaran route:list](docs/05-route-list.png)
 
 ## Tugas rumah: halaman anggota
 
 ### Berkas routes/web.php
 
-![Berkas routes/web.php](docs/04-route-web.png)
+![Berkas routes/web.php](docs/06-route-web.png)
 
 ### Berkas AnggotaController.php
 
-![Berkas AnggotaController.php](docs/05-controller-anggota.png)
+![Berkas AnggotaController.php](docs/07-controller-anggota.png)
+
+### Berkas anggota/index.blade.php
+
+![Berkas anggota/index.blade.php](docs/08-blade-anggota.png)
 
 ### Halaman daftar anggota
 
-![Halaman daftar anggota](docs/06-halaman-anggota.png)
+![Halaman daftar anggota](docs/09-halaman-anggota.png)
 
 Daftar anggota memakai `@forelse` dengan `@empty`, dan kolom status memilih
 penanda hijau atau merah lewat `@if`.
 
-### Berkas anggota/index.blade.php
-
-![Berkas anggota/index.blade.php](docs/07-blade-anggota.png)
-
 ### Detail anggota dengan pinjaman
 
-![Detail anggota dengan pinjaman](docs/08-detail-anggota.png)
+![Detail anggota dengan pinjaman](docs/10-detail-anggota.png)
 
 ### Detail anggota tanpa pinjaman
 
-![Detail anggota tanpa pinjaman](docs/09-anggota-tanpa-pinjaman.png)
+![Detail anggota tanpa pinjaman](docs/11-anggota-tanpa-pinjaman.png)
 
 Dua gambar terakhir membuktikan kedua cabang `@if` pada daftar pinjaman
 berjalan sesuai keadaan datanya.
