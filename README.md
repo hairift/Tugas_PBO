@@ -63,19 +63,60 @@ routes/web.php
 | `@if` / `@else` / `@endif` | `buku/index`, `buku/show`, `anggota/index`, `anggota/show` | Percabangan tampilan |
 | `{{ }}` | semua halaman | Menampilkan data dengan escape |
 
-## Tangkapan layar
+## Praktikum: halaman buku
 
-| Gambar | Berkas |
-| --- | --- |
-| Halaman daftar buku | `docs/01-halaman-buku.png` |
-| Halaman detail buku | `docs/02-detail-buku.png` |
-| Daftar route dari Artisan | `docs/03-route-list.png` |
-| Berkas routes/web.php | `docs/04-route-web.png` |
-| Berkas AnggotaController.php | `docs/05-controller-anggota.png` |
-| Halaman daftar anggota | `docs/06-halaman-anggota.png` |
-| Berkas anggota/index.blade.php | `docs/07-blade-anggota.png` |
-| Detail anggota dengan pinjaman | `docs/08-detail-anggota.png` |
-| Detail anggota tanpa pinjaman | `docs/09-anggota-tanpa-pinjaman.png` |
+### Halaman daftar buku
+
+![Halaman daftar buku](docs/01-halaman-buku.png)
+
+Delapan judul buku ditampilkan dengan `@foreach`, sedangkan tiga kartu ringkasan
+di atasnya dihitung di `BukuController@index`.
+
+### Halaman detail buku
+
+![Halaman detail buku](docs/02-detail-buku.png)
+
+Nilai `{id}` pada URL diterima method `show()`. Bila id tidak ada, `abort_if`
+menghentikan permintaan dengan halaman 404.
+
+### Pemeriksaan route dengan Artisan
+
+![Keluaran route:list](docs/03-route-list.png)
+
+`php artisan route:list --path=buku` memastikan kedua route praktikum terbaca
+Laravel, lalu `--except-vendor` menampilkan seluruh route aplikasi.
+
+## Tugas rumah: halaman anggota
+
+### Berkas routes/web.php
+
+![Berkas routes/web.php](docs/04-route-web.png)
+
+### Berkas AnggotaController.php
+
+![Berkas AnggotaController.php](docs/05-controller-anggota.png)
+
+### Halaman daftar anggota
+
+![Halaman daftar anggota](docs/06-halaman-anggota.png)
+
+Daftar anggota memakai `@forelse` dengan `@empty`, dan kolom status memilih
+penanda hijau atau merah lewat `@if`.
+
+### Berkas anggota/index.blade.php
+
+![Berkas anggota/index.blade.php](docs/07-blade-anggota.png)
+
+### Detail anggota dengan pinjaman
+
+![Detail anggota dengan pinjaman](docs/08-detail-anggota.png)
+
+### Detail anggota tanpa pinjaman
+
+![Detail anggota tanpa pinjaman](docs/09-anggota-tanpa-pinjaman.png)
+
+Dua gambar terakhir membuktikan kedua cabang `@if` pada daftar pinjaman
+berjalan sesuai keadaan datanya.
 
 ## Cara menjalankan
 
